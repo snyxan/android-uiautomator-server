@@ -225,14 +225,14 @@ class AccessibilityNodeInfoDumper {
             displayRect.left = 0;
             displayRect.right = width;
             displayRect.bottom = height;
-            nodeRect.intersect(displayRect);
-            if (Build.VERSION.SDK_INT >= 21) {  //  UiDevice.API_LEVEL_ACTUAL
-                android.graphics.Rect window = new Rect();
-                if (node.getWindow() != null) {
-                    node.getWindow().getBoundsInScreen(window);
-                    nodeRect.intersect(window);
-                }
-            }
+            // nodeRect.intersect(displayRect);
+            // if (Build.VERSION.SDK_INT >= 21) {  //  UiDevice.API_LEVEL_ACTUAL
+            //     android.graphics.Rect window = new Rect();
+            //     if (node.getWindow() != null) {
+            //         node.getWindow().getBoundsInScreen(window);
+            //         nodeRect.intersect(window);
+            //     }
+            // }
 
             return nodeRect;
         }
