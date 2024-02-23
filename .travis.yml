@@ -28,6 +28,8 @@ before_deploy:
   - mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/app-uiautomator.apk
   - mv app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk app/build/outputs/apk/app-uiautomator-test.apk
   - rvm install 2.5.0
+  - rvm use 2.5.0 --default
+  - rvm 2.5.0 --fuzzy do ruby -S gem install dpl
 deploy:
   provider: releases
   api_key:
