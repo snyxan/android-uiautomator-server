@@ -30,6 +30,7 @@ before_deploy:
   - rvm install 2.5.0
   - rvm use 2.5.0 --default
   - rvm 2.5.0 --fuzzy do ruby -S gem install dpl
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install multipart-post -v 2.3.0
 deploy:
   provider: releases
   api_key:
